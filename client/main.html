@@ -3,23 +3,25 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h2>Meteor Python Launcher</h2>
 
   {{> hello}}
+
+  <hr>
   {{> info}}
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <button id="launchPythonScript">Ask the Server to Run A Python Worker</button>
+  <p>You've launched the python script {{counter}} times.</p>
 </template>
 
 <template name="info">
-  <h2>Learn Meteor!</h2>
   <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+    <li><a href="https://github.com/hharnisc/python-meteor" target="_blank">Connecting Python applets to a Meteor app.</a></li>
+    <li><a href="https://clinical.meteorapp.com" target="_blank">Meteor Apps for Clinics & Healthcare Settings</a></li>
+    <li><a href="https://www.meteor.com/try" target="_blank">Meteor Tutorial</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">API Documentation</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Meteor Community Help</a></li>
   </ul>
 </template>

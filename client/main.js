@@ -15,8 +15,21 @@ Template.hello.helpers({
 });
 
 Template.hello.events({
-  'click button'(event, instance) {
+  'click #launchPythonScript'(event, instance) {
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);
+
+    // add data here that you want to send to the Python algorithm
+    let dataPayload = {};
+
+    Meteor.call("launchPythonScript", dataPayload, function(error, result){
+      if(error){
+        console.error("error", error);
+      }
+      if(result){
+        console.log("We got a result!", result);
+
+      }
+    });
   },
 });

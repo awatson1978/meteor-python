@@ -2,18 +2,23 @@ import { Meteor } from 'meteor/meteor';
 
 let assert = require('assert');
 let pythonBridge = require('python-bridge');
-let python = pythonBridge();
 
-
-let list = [3, 4, 2, 1];
-
-python.ex`import math`;
-python`math.sqrt(9)`.then(x => assert.equal(x, 3));
-python`sorted(${list})`.then(x => assert.deepEqual(x, list.sort()));
-python.end();
-
+let pythonService = pythonBridge();
+pythonService.ex`print("Ssssssss....  Python works.")`;
+pythonService.end();
 
 
 Meteor.startup(() => {
   // code to run on server at startup
+});
+
+
+Meteor.methods({
+  launchPythonScript:function(dataPayload){
+    console.log("Received a request from the web client.", dataPayload);
+
+    let pythonWorker = pythonBridge();
+    pythonWorker.ex`print("Launching a python script....")`;
+    pythonWorker.end();
+  }
 });
