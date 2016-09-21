@@ -1,0 +1,11 @@
+{
+  "name": "meteor-python",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "python-bridge": "^0.1.0"
+  }
+}
